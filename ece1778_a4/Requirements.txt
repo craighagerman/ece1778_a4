@@ -1,0 +1,31 @@
+
+REQUIREMENTS
+================================
+
+database    to hold list of names retrieved from a URL
+
+
+Initial View Controller -> embedded in UINavigationViewController for 'back' button
+-----------------------------------------------------------------------------------
+    text field (name = DBURL)
+        default text = ‘http://www.eecg.utoronto.ca/~jayar/PeopleList’
+    button  (Populate)
+        initially active
+        touchUpInside event =>
+            display progress bar / spinning wheel
+            spawn a thread, go to DBURL (text files of names, one per line), populate a database
+                on finish, send message (to search button) and terminate
+                display an alert:
+                    database has been loaded
+    button (Search)
+        initially inactive
+        become active when thread spawned by populate messages it has finished / after alert message is diplayed
+        touchUpInside event =>
+            display a UIPageViewController containing UIWebViews
+                UIWebView is populated with Google query for name in the database
+                swiping left/right displayes Google querys for successive names
+                NOTE: should pre-load adjacent pages (finish loading before swipe happens)
+
+
+
+Due:  Tuesday 2/25, 6:00pm
