@@ -9,16 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CHwebViewController.h"
 
-//@interface CHViewController : UIViewController <UIPageViewControllerDataSource>
 @interface CHViewController : UIViewController
 
-
 @property (strong, nonatomic) IBOutlet UITextField *DBURL;
-@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
-
-//@property (strong, nonatomic) UIPageViewController *pageViewController;
-//@property (strong, nonatomic) NSArray *pageTitles;
-//@property (strong, nonatomic) NSArray *pageImages;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 - (IBAction)populateButtonPressed:(id)sender;
 - (IBAction)searchButtonPressed:(id)sender;

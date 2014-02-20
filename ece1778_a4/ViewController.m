@@ -26,22 +26,11 @@
 {
     [super viewDidLoad];
     
-    
     CHAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     self.fetchedRecordsArray = [appDelegate getAllRecords];
     
     self.recordCount = [self.fetchedRecordsArray count];
-    
-    Record * record = [self.fetchedRecordsArray objectAtIndex:1];
-    NSLog(@"** %@ **", record.name);
-    
-    
-    
-    // Create the data model
-    _pageTitles = @[@"Kotsubu", @"Marimo", @"Anderson", @"Sagun"];
-    //_pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
-    
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageViewController"];
@@ -67,11 +56,13 @@
     [super viewWillAppear:animated];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillDisappear:animated];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -83,27 +74,17 @@
 #pragma mark - 
 
 
-
-
-
-
 - (CHwebViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    //if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
     if ((self.recordCount == 0) || (index >= self.recordCount)) {
         return nil;
     }
-    
-    
     Record * record = [self.fetchedRecordsArray objectAtIndex:index];
     
     // Create a new view controller and pass suitable data.
     CHwebViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
-    //cvc.titleText = @"Craig Hagerman";
-    //cvc.titleText = self.pageTitles[index];
     cvc.searchTerm = record.name;
     cvc.pageIndex = index;
-    
     return cvc;
 }
 
@@ -122,6 +103,7 @@
     return [self viewControllerAtIndex:index];
 }
 
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((CHwebViewController *) viewController).pageIndex;
@@ -129,9 +111,7 @@
     if (index == NSNotFound) {
         return nil;
     }
-    
     index++;
-    //if (index == [self.pageTitles count]) {
     if (index == self.recordCount) {
         return nil;
     }
@@ -142,7 +122,6 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    //return [self.pageTitles count];
     return self.recordCount;
 }
 

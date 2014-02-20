@@ -16,5 +16,4 @@
 @property NSUInteger pageIndex;
 @property NSString *searchTerm;
 
-
 @end

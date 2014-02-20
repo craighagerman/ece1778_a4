@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSArray *nameArray;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
+@property (strong, nonatomic) UITapGestureRecognizer *tapRecognizer;
 @end
 
 @implementation CHViewController
@@ -26,9 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.searchButton setEnabled:NO];
     CHAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc addObserver:self selector:@selector(keyboardWillShow:) name:
+     UIKeyboardWillShowNotification object:nil];
+    
+    [nc addObserver:self selector:@selector(keyboardWillHide:) name:
+     UIKeyboardWillHideNotification object:nil];
+    
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                            action:@selector(didTapAnywhere:)];
 }
 
 
@@ -38,11 +49,13 @@
     [super viewWillAppear:animated];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,6 +81,7 @@
         // communicate with the main thread
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.spinner stopAnimating];
+            [self.searchButton setEnabled:YES];
             [self displayAlert];
         });
     });
@@ -123,6 +137,26 @@
 
 - (IBAction)searchButtonPressed:(id)sender {
     // handled by storyboard segue
+}
+
+
+#pragma mark - methods to show / dismiss keyboard on background tap
+
+-(void) keyboardWillShow:(NSNotification *) note
+{
+    [self.view addGestureRecognizer:self.tapRecognizer];
+}
+
+
+-(void) keyboardWillHide:(NSNotification *) note
+{
+    [self.view removeGestureRecognizer:self.tapRecognizer];
+}
+
+
+-(void)didTapAnywhere: (UITapGestureRecognizer*) recognizer
+{
+    [self.DBURL resignFirstResponder];
 }
 
 

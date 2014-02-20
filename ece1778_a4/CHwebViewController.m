@@ -17,7 +17,6 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    NSLog(@"* webViewController *");
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -28,11 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    //[self.titleLabel setText:self.searchTerm];
-    NSLog(@"titleText: %@", self.searchTerm);
-    
-    
     self.webView.delegate = self;
     
     NSArray *searchArray = [self.searchTerm componentsSeparatedByString:@" "];

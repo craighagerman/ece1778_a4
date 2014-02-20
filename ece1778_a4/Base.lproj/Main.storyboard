@@ -55,8 +55,8 @@
                     <navigationItem key="navigationItem" id="Xhf-4f-aoj"/>
                     <connections>
                         <outlet property="DBURL" destination="fYc-51-jQI" id="2PH-dB-EtI"/>
+                        <outlet property="searchButton" destination="JFz-bj-bMG" id="Zxj-wC-8Cd"/>
                         <outlet property="spinner" destination="Cil-Yc-m8z" id="ogJ-KM-tEN"/>
-                        <outlet property="urlTextField" destination="fYc-51-jQI" id="b04-Q2-pnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
