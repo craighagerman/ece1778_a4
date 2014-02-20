@@ -13,7 +13,7 @@
 @end
 
 @implementation CHwebViewController
-@synthesize titleLabel;
+//@synthesize titleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,19 +29,18 @@
 {
     [super viewDidLoad];
 
-    [self.titleLabel setText:self.titleText];
-    NSLog(@"titleText: %@", self.titleText);
+    //[self.titleLabel setText:self.searchTerm];
+    NSLog(@"titleText: %@", self.searchTerm);
     
     
     self.webView.delegate = self;
     
-    NSArray *searchTerm = [self.titleText componentsSeparatedByString:@" "];
-    NSString *searchString = [searchTerm componentsJoinedByString:@"+"];
+    NSArray *searchArray = [self.searchTerm componentsSeparatedByString:@" "];
+    NSString *searchString = [searchArray componentsJoinedByString:@"+"];
     
     NSString *google = @"http://google.ca/search?q=";
     NSString *urlString = [google stringByAppendingString:searchString];
     NSURL *url = [NSURL URLWithString:urlString];
-    //NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
     NSURLRequest *requestURL = [NSURLRequest requestWithURL:url];
 
     [self.webView loadRequest:requestURL];

@@ -101,7 +101,7 @@
     CHwebViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
     //cvc.titleText = @"Craig Hagerman";
     //cvc.titleText = self.pageTitles[index];
-    cvc.titleText = record.name;
+    cvc.searchTerm = record.name;
     cvc.pageIndex = index;
     
     return cvc;
