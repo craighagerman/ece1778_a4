@@ -11,3 +11,17 @@ add idNumber to database Records
 
 
 
+note:
+
+    /*
+    // This is how to fetch all objects from core data and put them into an array
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Record"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *err = nil;
+    NSArray *fetchedObjects = [self.managedObjectContext
+                               executeFetchRequest:fetchRequest error:&err];
+
+    NSLog(@" *** \n  %@ ", fetchedObjects);
+    */

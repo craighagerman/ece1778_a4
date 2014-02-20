@@ -10,9 +10,12 @@
 #import "CHAppDelegate.h"
 #import "ViewController.h"
 
+
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *nameArray;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSArray* fetchedRecordsArray;
+@property (readwrite, assign) NSUInteger recordCount;
 @end
 
 @implementation ViewController
@@ -24,8 +27,19 @@
     [super viewDidLoad];
     
     
+    CHAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    self.fetchedRecordsArray = [appDelegate getAllRecords];
+    
+    self.recordCount = [self.fetchedRecordsArray count];
+    
+    Record * record = [self.fetchedRecordsArray objectAtIndex:1];
+    NSLog(@"** %@ **", record.name);
+    
+    
+    
     // Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
+    _pageTitles = @[@"Kotsubu", @"Marimo", @"Anderson", @"Sagun"];
     //_pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
     
@@ -44,8 +58,6 @@
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
 
-    CHAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 
@@ -77,13 +89,19 @@
 
 - (CHwebViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+    //if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+    if ((self.recordCount == 0) || (index >= self.recordCount)) {
         return nil;
     }
     
+    
+    Record * record = [self.fetchedRecordsArray objectAtIndex:index];
+    
     // Create a new view controller and pass suitable data.
     CHwebViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
-    cvc.titleText = @"Craig Hagerman";
+    //cvc.titleText = @"Craig Hagerman";
+    //cvc.titleText = self.pageTitles[index];
+    cvc.titleText = record.name;
     cvc.pageIndex = index;
     
     return cvc;
@@ -113,7 +131,8 @@
     }
     
     index++;
-    if (index == [self.pageTitles count]) {
+    //if (index == [self.pageTitles count]) {
+    if (index == self.recordCount) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
@@ -123,8 +142,10 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self.pageTitles count];
+    //return [self.pageTitles count];
+    return self.recordCount;
 }
+
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {

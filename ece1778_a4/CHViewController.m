@@ -49,11 +49,13 @@
 
     */
     
-    
-    //1
     CHAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    //2
     self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    NSArray* fetchedRecordsArray;
+    fetchedRecordsArray = [appDelegate getAllRecords];
+    NSLog(@"Core Data contains _%d_ objects", [fetchedRecordsArray count]);
+    
 }
 
 
@@ -122,7 +124,6 @@
     NSUInteger count = [self.managedObjectContext countForFetchRequest:request error:&error];
     
     if (!error){
-        //NSLog(@"entry %@ exists", person);
         return count;
     }
     else
@@ -132,19 +133,22 @@
 
 - (void)addNamesToDB:(NSArray *)nArr
 {
-    Record * newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Record"
-                                                      inManagedObjectContext:self.managedObjectContext];
     for (NSString *person in nArr) {
-        if (( ![person isEqualToString:@""]) && ( [self objectExists:person] > 0 )) {
+        if (( ![person isEqualToString:@""]) && ( [self objectExists:person] <= 0 )) {
+            Record * newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Record"
+                                                              inManagedObjectContext:self.managedObjectContext];
             newEntry.name = person;
-            //NSLog(@"person: %@ added", person);
         }
     }
-
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Couldn't save: %@", [error localizedDescription]);
     }
+    
+    
+    
+
+
 }
 
 

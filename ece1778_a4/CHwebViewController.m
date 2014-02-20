@@ -28,10 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    //self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
-    //self.titleLabel.text = self.titleText;
-    NSLog(@"titleLabel.text: %@", self.titleLabel.text);
+
     [self.titleLabel setText:self.titleText];
     NSLog(@"titleText: %@", self.titleText);
     
