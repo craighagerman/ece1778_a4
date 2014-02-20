@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4400BC0318B1D4C200D613A8 /* ToDO in Resources */ = {isa = PBXBuildFile; fileRef = 4400BC0218B1D4C200D613A8 /* ToDO */; };
+		445CF92618B0539300A0D524 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445CF92518B0539300A0D524 /* CoreData.framework */; };
+		445CF92918B0541800A0D524 /* a4Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445CF92718B0541800A0D524 /* a4Model.xcdatamodeld */; };
+		445CF92C18B0559800A0D524 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 445CF92B18B0559800A0D524 /* Record.m */; };
+		445CF92F18B08F1900A0D524 /* CHwebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445CF92E18B08F1900A0D524 /* CHwebViewController.m */; };
 		449CC14218A7EEFD006D88DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449CC14118A7EEFD006D88DB /* Foundation.framework */; };
 		449CC14418A7EEFD006D88DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449CC14318A7EEFD006D88DB /* CoreGraphics.framework */; };
 		449CC14618A7EEFD006D88DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449CC14518A7EEFD006D88DB /* UIKit.framework */; };
@@ -23,7 +28,7 @@
 		449CC16D18A7EEFD006D88DB /* ece1778_a4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 449CC16C18A7EEFD006D88DB /* ece1778_a4Tests.m */; };
 		449CC17718A7EF67006D88DB /* Requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 449CC17618A7EF67006D88DB /* Requirements.txt */; };
 		449CC17918A7F2FA006D88DB /* assignmentp4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 449CC17818A7F2FA006D88DB /* assignmentp4.pdf */; };
-		449CC17C18A7F31E006D88DB /* CHPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 449CC17B18A7F31E006D88DB /* CHPageViewController.m */; };
+		44BA73D918B178B7004E23E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BA73D818B178B7004E23E1 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4400BC0218B1D4C200D613A8 /* ToDO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ToDO; path = ece1778_a4/ToDO; sourceTree = "<group>"; };
+		445CF92518B0539300A0D524 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		445CF92818B0541800A0D524 /* a4Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = a4Model.xcdatamodel; sourceTree = "<group>"; };
+		445CF92A18B0559800A0D524 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		445CF92B18B0559800A0D524 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		445CF92D18B08F1900A0D524 /* CHwebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHwebViewController.h; sourceTree = "<group>"; };
+		445CF92E18B08F1900A0D524 /* CHwebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHwebViewController.m; sourceTree = "<group>"; };
 		449CC13E18A7EEFD006D88DB /* ece1778_a4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ece1778_a4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449CC14118A7EEFD006D88DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		449CC14318A7EEFD006D88DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,8 +70,8 @@
 		449CC16C18A7EEFD006D88DB /* ece1778_a4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ece1778_a4Tests.m; sourceTree = "<group>"; };
 		449CC17618A7EF67006D88DB /* Requirements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Requirements.txt; path = ece1778_a4/Requirements.txt; sourceTree = "<group>"; };
 		449CC17818A7F2FA006D88DB /* assignmentp4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = assignmentp4.pdf; sourceTree = "<group>"; };
-		449CC17A18A7F31E006D88DB /* CHPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPageViewController.h; sourceTree = "<group>"; };
-		449CC17B18A7F31E006D88DB /* CHPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPageViewController.m; sourceTree = "<group>"; };
+		44BA73D818B178B7004E23E1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		44BA73DA18B178C1004E23E1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445CF92618B0539300A0D524 /* CoreData.framework in Frameworks */,
 				449CC14418A7EEFD006D88DB /* CoreGraphics.framework in Frameworks */,
 				449CC14618A7EEFD006D88DB /* UIKit.framework in Frameworks */,
 				449CC14218A7EEFD006D88DB /* Foundation.framework in Frameworks */,
@@ -90,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				449CC17618A7EF67006D88DB /* Requirements.txt */,
+				4400BC0218B1D4C200D613A8 /* ToDO */,
 				449CC17818A7F2FA006D88DB /* assignmentp4.pdf */,
 				449CC14718A7EEFD006D88DB /* ece1778_a4 */,
 				449CC16618A7EEFD006D88DB /* ece1778_a4Tests */,
@@ -110,6 +124,7 @@
 		449CC14018A7EEFD006D88DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				445CF92518B0539300A0D524 /* CoreData.framework */,
 				449CC14118A7EEFD006D88DB /* Foundation.framework */,
 				449CC14318A7EEFD006D88DB /* CoreGraphics.framework */,
 				449CC14518A7EEFD006D88DB /* UIKit.framework */,
@@ -121,14 +136,19 @@
 		449CC14718A7EEFD006D88DB /* ece1778_a4 */ = {
 			isa = PBXGroup;
 			children = (
+				445CF92718B0541800A0D524 /* a4Model.xcdatamodeld */,
+				445CF92A18B0559800A0D524 /* Record.h */,
+				445CF92B18B0559800A0D524 /* Record.m */,
 				449CC15018A7EEFD006D88DB /* CHAppDelegate.h */,
 				449CC15118A7EEFD006D88DB /* CHAppDelegate.m */,
 				449CC15318A7EEFD006D88DB /* Main.storyboard */,
-				449CC17A18A7F31E006D88DB /* CHPageViewController.h */,
-				449CC17B18A7F31E006D88DB /* CHPageViewController.m */,
 				449CC15618A7EEFD006D88DB /* CHViewController.h */,
 				449CC15718A7EEFD006D88DB /* CHViewController.m */,
 				449CC15918A7EEFD006D88DB /* Images.xcassets */,
+				44BA73DA18B178C1004E23E1 /* ViewController.h */,
+				44BA73D818B178B7004E23E1 /* ViewController.m */,
+				445CF92D18B08F1900A0D524 /* CHwebViewController.h */,
+				445CF92E18B08F1900A0D524 /* CHwebViewController.m */,
 				449CC14818A7EEFD006D88DB /* Supporting Files */,
 			);
 			path = ece1778_a4;
@@ -244,6 +264,7 @@
 				449CC15A18A7EEFD006D88DB /* Images.xcassets in Resources */,
 				449CC14C18A7EEFD006D88DB /* InfoPlist.strings in Resources */,
 				449CC17718A7EF67006D88DB /* Requirements.txt in Resources */,
+				4400BC0318B1D4C200D613A8 /* ToDO in Resources */,
 				449CC15518A7EEFD006D88DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449CC17C18A7F31E006D88DB /* CHPageViewController.m in Sources */,
+				44BA73D918B178B7004E23E1 /* ViewController.m in Sources */,
+				445CF92918B0541800A0D524 /* a4Model.xcdatamodeld in Sources */,
+				445CF92F18B08F1900A0D524 /* CHwebViewController.m in Sources */,
 				449CC14E18A7EEFD006D88DB /* main.m in Sources */,
 				449CC15218A7EEFD006D88DB /* CHAppDelegate.m in Sources */,
+				445CF92C18B0559800A0D524 /* Record.m in Sources */,
 				449CC15818A7EEFD006D88DB /* CHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +499,7 @@
 				449CC17218A7EEFD006D88DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		449CC17318A7EEFD006D88DB /* Build configuration list for PBXNativeTarget "ece1778_a4Tests" */ = {
 			isa = XCConfigurationList;
@@ -483,8 +508,22 @@
 				449CC17518A7EEFD006D88DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		445CF92718B0541800A0D524 /* a4Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				445CF92818B0541800A0D524 /* a4Model.xcdatamodel */,
+			);
+			currentVersion = 445CF92818B0541800A0D524 /* a4Model.xcdatamodel */;
+			path = a4Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 449CC13618A7EEFD006D88DB /* Project object */;
 }

@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="MX1-lD-T1x"/>
                         <viewControllerLayoutGuide type="bottom" id="o0W-uy-HAE"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.49999999999999961" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -31,6 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B3s-Sx-KdJ"/>
+                                    <segue destination="BBp-v9-zEM" kind="push" id="C4v-au-iTD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAN-af-YIy">
@@ -44,25 +45,94 @@
                                     <action selector="populateButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vys-7Z-Lwu"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cil-Yc-m8z">
+                                <rect key="frame" x="150" y="156" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.89106345663265307" green="0.85118638645728606" blue="0.72514513169978334" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xhf-4f-aoj"/>
                     <connections>
                         <outlet property="DBURL" destination="fYc-51-jQI" id="2PH-dB-EtI"/>
+                        <outlet property="spinner" destination="Cil-Yc-m8z" id="ogJ-KM-tEN"/>
+                        <outlet property="urlTextField" destination="fYc-51-jQI" id="b04-Q2-pnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="138"/>
+            <point key="canvasLocation" x="217" y="138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="afj-GV-OZm">
+            <objects>
+                <viewController id="BBp-v9-zEM" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gZ4-E8-nSK"/>
+                        <viewControllerLayoutGuide type="bottom" id="BYm-7M-pJu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q2Q-iI-6Fa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-sR-O4R">
+                                <rect key="frame" x="139" y="273" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RiC-Hz-4tP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyR-bv-Lcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="136"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="YxD-wt-u8z">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ihe-68-LAG" customClass="CHPageViewController" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ihe-68-LAG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYY-yL-kgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1016" y="138"/>
+        </scene>
+        <!--Hweb View Controller-->
+        <scene sceneID="3uI-lZ-NUt">
+            <objects>
+                <viewController storyboardIdentifier="webViewController" id="tgM-46-WXt" customClass="CHwebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ak1-Fp-JCq"/>
+                        <viewControllerLayoutGuide type="bottom" id="t6W-Mm-REp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aNG-ns-1YP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrE-5Y-JVX">
+                                <rect key="frame" x="0.0" y="64" width="320" height="346"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enJ-lE-kDc">
+                                <rect key="frame" x="66" y="527" width="189" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="enJ-lE-kDc" id="33i-nX-9QG"/>
+                        <outlet property="webView" destination="YrE-5Y-JVX" id="yV9-tw-XyM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAX-vy-Ntp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gmy-uM-DmL">
@@ -80,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZC-Fa-Z5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="138"/>
+            <point key="canvasLocation" x="-221" y="138"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
